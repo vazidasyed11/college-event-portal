@@ -1,0 +1,14 @@
+# Optional Render blueprint for the backend (Docker)
+services:
+  - type: web
+    name: event-portal-api
+    runtime: docker
+    rootDir: backend
+    plan: free
+    envVars:
+      - key: DB_URL        # jdbc:postgresql://HOST:5432/DBNAME
+        sync: false
+      - key: DB_USER
+        sync: false
+      - key: DB_PASSWORD
+        sync: false
